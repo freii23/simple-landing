@@ -1,38 +1,52 @@
+ /* Основные стили для страницы */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
     font-family: Arial, sans-serif;
 }
 
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Стили для header */
 header {
     background-color: #333;
     color: white;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
 }
 
 header .logo {
-    font-size: 1.5em;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 header nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+}
+
+header nav ul li {
+    margin-left: 20px;
 }
 
 header nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1em;
+    font-size: 18px;
 }
 
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для hero section */
 .hero {
     position: relative;
     text-align: center;
@@ -40,89 +54,106 @@ header nav ul li a {
 
 .hero img {
     width: 100%;
-    height: auto;
+    height: 400px;
+    object-fit: cover;
 }
 
-.hero-text {
+.hero .hero-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-    font-size: 3em;
+    font-size: 48px;
     font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* Стили для Story Section */
 .story-section {
+    padding: 40px;
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 50px 20px;
 }
 
 .story-section img {
-    width: 40%;
+    width: 55%;
     height: auto;
-    object-fit: cover;
+    border-radius: 10px;
 }
 
 .story-section .text {
-    width: 50%;
-    padding: 0 20px;
+    width: 55%;
 }
 
 .story-section h2 {
-    font-size: 2em;
+    font-size: 36px;
     margin-bottom: 20px;
 }
 
+.story-section p {
+    font-size: 18px;
+}
+
+/* Стили для Horizontal Blocks Section */
 .horizontal-blocks {
     display: flex;
-    justify-content: space-around;
-    padding: 50px 20px;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #f9f9f9;
 }
 
 .horizontal-blocks .block {
-    text-align: center;
     width: 30%;
+    text-align: center;
 }
 
-.horizontal-blocks h3 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
+.horizontal-blocks .block img {
+    width: 300px;
+    height: 200px;
+    margin-bottom: 15px;
 }
 
-.horizontal-blocks p {
-    margin-top: 10px;
-    font-size: 1em;
+.horizontal-blocks .block h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
+.horizontal-blocks .block p {
+    font-size: 16px;
+}
+
+/* Стили для footer */
 footer {
     background-color: #333;
     color: white;
+    padding: 40px;
     text-align: center;
-    padding: 40px 20px;
 }
 
 footer h2 {
-    font-size: 1.8em;
+    font-size: 28px;
     margin-bottom: 20px;
 }
 
-.subscribe-form {
+footer .subscribe-form {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.subscribe-form input {
+footer .subscribe-form input {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    width: 250px;
+    margin-right: 10px;
+    font-size: 16px;
 }
 
-.subscribe-form button {
+footer .subscribe-form button {
     padding: 10px 20px;
     background-color: white;
     color: #333;
@@ -131,6 +162,63 @@ footer h2 {
     cursor: pointer;
 }
 
-.subscribe-form button:hover {
+footer .subscribe-form button:hover {
     background-color: #ccc;
+}
+
+/* Стили для модальных окон */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+}
+
+.modal-content .close {
+    float: right;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content form input {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: white;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #ccc;
+}
+
+#close-success-modal {
+    background-color: lightgreen;
 }

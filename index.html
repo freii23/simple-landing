@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,9 +13,9 @@
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Story</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/Coffee" target="_blank">Story</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a href="#">Subscribe</a></li>
+                <li><a href="#" id="subscribe-link">Subscribe</a></li>
             </ul>
         </nav>
     </header>
@@ -60,9 +60,37 @@
     <footer>
         <h2>Subscribe</h2>
         <div class="subscribe-form">
-            <input type="email" placeholder="enter your email">
-            <button type="submit">Submit</button>
+            <input type="email" placeholder="enter your email" id="email-input">
+            <button type="submit" id="submit-btn">Submit</button>
         </div>
     </footer>
+
+    <!-- Modal for Payment -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Payment Information</h2>
+            <form id="payment-form">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" placeholder="Enter your card number">
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="text" id="expiry-date" placeholder="MM/YY">
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" placeholder="CVV">
+                <button type="submit" id="pay-btn">Submit Payment</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal for Success Message -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <h2>Success</h2>
+            <p>Вы успешно подписались!</p>
+            <button id="close-success-modal">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
